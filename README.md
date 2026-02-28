@@ -17,9 +17,9 @@ This guide explains how to generate the Windows executable using PyInstaller.
         
         ✅ Model weight files:
         
-        best.pt
-        
-        species.pt
+            best.pt
+            
+            species.pt
         
         ✅ species_labels.txt
         
