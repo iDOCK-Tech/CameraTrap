@@ -65,8 +65,8 @@ This guide explains how to generate the Windows executable using PyInstaller.
 
     To successfully run the .exe, you must copy the following files into:
     
-        /dist/Camera_Trap_App
-        Required Files:
+    /dist/Camera_Trap_App
+    Required Files:
         
         All .dll files
         
