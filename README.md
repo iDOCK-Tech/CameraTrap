@@ -1,4 +1,6 @@
 🎯 Camera Trap Application
+
+
 🔧 Steps to Create the Executable (.exe)
 
 This guide explains how to generate the Windows executable using PyInstaller.
