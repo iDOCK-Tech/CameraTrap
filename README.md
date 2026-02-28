@@ -1,93 +1,102 @@
-### Camera Trap Application
-Steps to Create Executable (.exe)
+🎯 Camera Trap Application
+🔧 Steps to Create the Executable (.exe)
 
-Follow the steps below carefully to generate the .exe file using PyInstaller.
+This guide explains how to generate the Windows executable using PyInstaller.
 
-📌 Step 1: Prepare Project Folder
+📁 1️⃣ Prepare the Project Folder
 
-Ensure that all required files are placed in the same folder.
+    Before building the executable, ensure all required files are placed in the same folder.
+    
+    Your project folder must contain:
+    
+    ✅ All Python files (.py)
+    
+    ✅ All required .dll files
+    
+    ✅ Model weight files:
+    
+    best.pt
+    
+    species.pt
+    
+    ✅ species_labels.txt
+    
+    ✅ All required image files (.jpg, .png)
+    
+    ✅ Camera_Trap_App.spec (Very Important)
 
-The folder must contain:
+🛠 2️⃣ Install PyInstaller
 
-All Python files (.py)
+    Open Command Prompt or Terminal and install PyInstaller:
+    
+    pip install pyinstaller
+📂 3️⃣ Navigate to Project Directory
 
-All required .dll files
+    Move to your project folder:
+    
+    cd C:\RESQ\2.0\v2
+    
+    (Replace the path with your actual project location if different.)
 
-All model weight files (.pt)
+🚀 4️⃣ Build the Executable
 
-best.pt
+    Run the following command:
+    
+    pyinstaller Camera_Trap_App.spec --clean
+    
+    The --clean option ensures a fresh build.
 
-species.pt
+📦 5️⃣ After Build Completion
 
-species_labels.txt
+    Once the process completes successfully, two new folders will be created:
+    
+    /build
+    /dist
+    
+    Inside the /dist folder, you will find:
+    
+    /Camera_Trap_App
+    
+    Inside this folder, the generated .exe file will be available.
 
-All required image files (.jpg, .png)
+⚠ 6️⃣ Important: Runtime File Requirements
 
-Camera_Trap_App.spec (IMPORTANT)
+    To successfully run the .exe, you must copy the following files into:
+    
+    /dist/Camera_Trap_App
+    Required Files:
+    
+    All .dll files
+    
+    best.pt
+    
+    species.pt
+    
+    species_labels.txt
+    
+    All required .jpg and .png image files
+    
+    These files must be in the same folder as the .exe file.
+    
+    🗂 Final Folder Structure Example
+    dist/
+     └── Camera_Trap_App/
+          ├── Camera_Trap_App.exe
+          ├── best.pt
+          ├── species.pt
+          ├── species_labels.txt
+          ├── *.dll files
+          ├── *.jpg / *.png files
+    ▶ Running the Application
+    
+    After placing all required files in the Camera_Trap_App folder:
+    
+    👉 Double-click Camera_Trap_App.exe to start the application.
 
-📌 Step 2: Install PyInstaller
+📌 Notes
 
-Open your terminal or command prompt and run:
-
-pip install pyinstaller
-📌 Step 3: Navigate to Project Folder
-
-Move to your project directory:
-
-cd path\to\your\project\folder
-
-Example:
-
-cd C:\RESQ\2.0\v2
-📌 Step 4: Build the Executable
-
-Run the following command:
-
-pyinstaller Camera_Trap_App.spec --clean
-📌 Step 5: After Build Completes
-
-After the process finishes successfully, two new folders will be created:
-
-/build
-
-/dist
-
-Inside the /dist folder, you will find:
-
-/Camera_Trap_App
-
-Inside this folder, the .exe file will be available.
-
-📌 Step 6: Prepare Runtime Files
-
-To successfully run the .exe, you must copy the following files into the:
-
-/dist/Camera_Trap_App
-Required Files:
-
-All .dll files
-
-Model weights:
-
-best.pt
-
-species.pt
-
-species_labels.txt
-
-All .jpg and .png image files
-
-⚠ These files must be present in the same folder as the .exe file for the application to run correctly.
-
-✅ Final Folder Structure Example
-dist/
- └── Camera_Trap_App/
-      ├── Camera_Trap_App.exe
-      ├── best.pt
-      ├── species.pt
-      ├── species_labels.txt
-      ├── *.dll files
-      ├── *.jpg / *.png files
-🚀 You Are Ready to Run
-
-Double-click the .exe file inside the Camera_Trap_App folder to start the application.
+    Ensure all model and DLL files are compatible with your system.
+    
+    Missing files will cause the application to fail at runtime.
+    
+    Always rebuild using --clean if you face issues.
